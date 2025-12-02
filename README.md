@@ -1,27 +1,24 @@
-  # VGG Model Compression & Quantization for CIFAR-10
+# VGG Model Compression and Quantization for CIFAR-10
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-1.12-red)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Project Banner](results/banner.png)  <!-- Optional banner image -->
 
-Efficient VGG models using **compression** and **quantization** techniques for faster inference and lower memory usage on CIFAR-10 dataset.
+## Overview
+This project implements **model compression and quantization** techniques on a VGG network trained on the CIFAR-10 dataset.  
+The goal is to **reduce model size, speed up inference**, and maintain high accuracy.  
+Techniques applied include **pruning, post-training quantization, and fine-tuning**.
 
 ---
 
 ## Table of Contents
 - [Overview](#overview)
 - [Folder Structure](#folder-structure)
-- [Features](#features)
-- [Installation](#installation)
+- [Methodology](#methodology)
+- [Dependencies](#dependencies)
 - [Usage](#usage)
 - [Results](#results)
+- [Plots & Visuals](#plots--visuals)
 - [References](#references)
-- [Contributing](#contributing)
-
----
-
-## Overview
-VGG models are accurate but resource-heavy. This project reduces their size and inference time using **pruning**, **weight optimization**, and **quantization**, making them suitable for deployment on edge devices while maintaining high CIFAR-10 accuracy.
+- [Author](#author)
 
 ---
 
@@ -36,14 +33,67 @@ VGG_Model_Compression_and_Quantization/
 ├── results/               # Plots, GIFs, performance metrics
 ├── requirements.txt       # Required Python packages
 └── README.md
-# Clone the repository
-git clone https://github.com/Muskaan322/VGG_Model_Compression_and_Quantization_for_CIFAR-10.git
 
-# Navigate to project
-cd VGG_Model_Compression_and_Quantization_for_CIFAR-10
+---
 
-# Install dependencies
+## Methodology
+1. **Model Selection**  
+   Start with a pre-trained VGG model for CIFAR-10 classification.  
+
+2. **Pruning (Compression)**  
+   Reduce redundant weights in the network without significantly affecting accuracy.  
+
+3. **Quantization**  
+   Convert model weights from `float32` to `int8` to decrease model size and inference time.  
+
+4. **Fine-tuning**  
+   Train the compressed and quantized models to recover any lost accuracy.  
+
+5. **Evaluation & Comparison**  
+   Analyze **accuracy, model size, and inference time** for original, pruned, and quantized models.
+
+---
+
+## Dependencies
+- Python >= 3.9  
+- PyTorch >= 2.1  
+- torchvision  
+- numpy  
+- matplotlib  
+
+Install dependencies using:
+```bash
 pip install -r requirements.txt
-python scripts/train.py --epochs 50 --quantize True
-python scripts/evaluate.py --model_path models/compressed_vgg.pth
+## Results
 
+### Model Performance Comparison
+| Model Version  | Accuracy | Model Size (MB) | Inference Time (ms) |
+|----------------|---------|----------------|-------------------|
+| Original VGG   | 93%     | 200            | 25                |
+| Pruned VGG     | 92%     | 120            | 18                |
+| Quantized VGG  | 91%     | 50             | 10                |
+
+---
+
+### Accuracy & Loss Curves
+![Accuracy & Loss](results/accuracy_loss_plot.png)  
+*Figure 1: Training and validation accuracy & loss curves for different models.*
+
+---
+
+### Model Size Comparison
+![Model Size](results/model_size_plot.png)  
+*Figure 2: Comparison of model sizes before and after compression/quantization.*
+
+---
+
+### Inference Time Comparison
+![Inference Time](results/inference_time_plot.png)  
+*Figure 3: Inference time comparison for original, pruned, and quantized models.*
+
+---
+
+### Notes
+- Accuracy is measured on the CIFAR-10 test dataset.  
+- Model size is calculated after saving the model in `.pth` format.  
+- Inference time is measured per image on CPU.
