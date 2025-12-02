@@ -1,4 +1,4 @@
-# VGG Model Compression & Quantization for CIFAR-10
+  # VGG Model Compression & Quantization for CIFAR-10
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-1.12-red)
@@ -36,3 +36,12 @@ VGG_Model_Compression_and_Quantization/
 ├── results/               # Plots, GIFs, performance metrics
 ├── requirements.txt       # Required Python packages
 └── README.md
+Features
+
+Compress VGG models using pruning and weight optimization.
+
+Quantize model weights to reduce precision and memory usage.
+
+Evaluate models on CIFAR-10 for accuracy, size, and inference time.
+
+Compare original vs optimized models with clear metrics.
