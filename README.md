@@ -4,10 +4,10 @@
 This project compresses and quantizes the VGG model for the CIFAR-10 dataset to reduce model size and improve inference speed while maintaining high accuracy.
 
 ## Folder Structure
-- **data/**: CIFAR-10 dataset  
-- **models/**: Original and compressed models  
-- **results/**: Evaluation results and plots  
-- **scripts/**: Training, pruning, and quantization scripts  
+- **data**: CIFAR-10 dataset  
+- **models**: Original and compressed models  
+- **results**: Evaluation results and plots  
+- **scripts**: Training, pruning, and quantization scripts  
 
 ## Features
 - Reduce model size using pruning  
@@ -21,5 +21,4 @@ This project compresses and quantizes the VGG model for the CIFAR-10 dataset to 
 
 ## References
 - [VGG Paper](https://arxiv.org/abs/1409.1556)  
-- [PyTorch Pruning Tutorial](https://pytorch.org/tutorials/intermediate/pruning_tutorial.html)  
 - [CIFAR-10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
