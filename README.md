@@ -36,12 +36,14 @@ VGG_Model_Compression_and_Quantization/
 ├── results/               # Plots, GIFs, performance metrics
 ├── requirements.txt       # Required Python packages
 └── README.md
-Features
+# Clone the repository
+git clone https://github.com/Muskaan322/VGG_Model_Compression_and_Quantization_for_CIFAR-10.git
 
-Compress VGG models using pruning and weight optimization.
+# Navigate to project
+cd VGG_Model_Compression_and_Quantization_for_CIFAR-10
 
-Quantize model weights to reduce precision and memory usage.
+# Install dependencies
+pip install -r requirements.txt
+python scripts/train.py --epochs 50 --quantize True
+python scripts/evaluate.py --model_path models/compressed_vgg.pth
 
-Evaluate models on CIFAR-10 for accuracy, size, and inference time.
-
-Compare original vs optimized models with clear metrics.
