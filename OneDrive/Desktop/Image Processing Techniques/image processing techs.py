@@ -1,7 +1,7 @@
 
 """
 **Pillow is the main library used for handling image zooming in and zoom out, We can install it using pip install pillow**
-
+##Task1
 """
 
 from PIL import Image
